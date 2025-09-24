@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+// Fonction pour calculer le produit vectoriel de deux vecteurs 3D
+void produit_vectoriel(int A[3], int B[3], int C[3]) {
+    C[0] = A[1]*B[2] - A[2]*B[1];
+    C[1] = A[2]*B[0] - A[0]*B[2];
+    C[2] = A[0]*B[1] - A[1]*B[0];
+}
+
+int main() {
+    int A[3], B[3], C[3];
+
+    printf("Entrez les composantes du vecteur A (a1 a2 a3) : ");
+    scanf("%d %d %d", &A[0], &A[1], &A[2]);
+
+    printf("Entrez les composantes du vecteur B (b1 b2 b3) : ");
+    scanf("%d %d %d", &B[0], &B[1], &B[2]);
+
+    produit_vectoriel(A, B, C);
+
+    printf("Le produit vectoriel A x B = (%d, %d, %d)\n", C[0], C[1], C[2]);
+
+    return 0;
+}
